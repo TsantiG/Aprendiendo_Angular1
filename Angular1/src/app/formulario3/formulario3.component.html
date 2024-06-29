@@ -1,0 +1,41 @@
+<!--  hacer una pagina con un formulario donde se tenga que ingresar id, nombre, descripsion, genero y foto, ademas que en la foto, cuando le de click se abra un video ya descargardo  -->
+    <div class="mb-3">
+        <form [formGroup]="FormUsuario">
+            
+            <div class="mb-3">
+            <label for="exampleUser1" class="form-label">Usuario</label>
+            <input type="text" class="form-control" id="exampleUser1" placeholder="Ingrese su nombre" FormControlName='nombre'>
+            </div>
+            <div class="alert alert-danger mt-2" [hidden]="nombre.valid || nombre.pristine">
+                el nombre es invalido
+            </div>
+            <div class="mb-3">
+            <label for="exampleInputlastname1" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="exampleInputlastname1" placeholder="Ingrese su nombre" FormControlName='apellido'>
+            </div>
+            <div class="alert alert-danger mt-2" [hidden]="apellido.valid || apellido.pristine">
+                el telefono es invalido
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" FormControlName='correo' placeholder="Ingrese su correo" required>
+                
+                <div class="alert alert-danger mt-2" [hidden]="correo.valid || correo.pristine">
+                    <span *ngIf="correo.errors?.['required']">
+                        el correo es obligatorio
+                    </span>
+                    <span *ngIf="correo.errors?.['email']">
+                        el correo es invalido
+                    </span>
+                </div>
+    
+            </div>
+            
+            
+            <button type="submit" class="btn btn-primary" [disabled]="FormUsuario.invalid" (click)="procesar()">Ingresar</button>
+        </form>
+        </div>
+
+      {{FormUsuario.get('nombre')?.value}}
+      {{FormUsuario.get('telefono')?.value}}
+      {{FormUsuario.get("correo")?.value}}

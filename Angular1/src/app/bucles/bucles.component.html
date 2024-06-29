@@ -1,0 +1,47 @@
+
+{{persona}}
+
+<hr>
+
+<ul>
+    <li *ngFor="let persona of persona">{{persona.nombrep + ' '+ persona.apellidop + ', ('+
+    persona.edadp +')'}}</li>
+    
+</ul>
+
+<ul>
+    <li *ngFor="let persona of persona, let i = index">
+    {{ i + 1 }} - {{persona.nombrep}}
+    {{persona.apellidop}}
+    {{persona.edadp}}
+    {{persona.telefono}}
+    {{persona.correo}}
+    </li>
+</ul>
+
+
+<div>
+    <table class="tabla-personas">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let persona of persona; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ persona.nombrep }}</td>
+            <td>{{ persona.apellidop }}</td>
+            <td>{{ persona.edadp }}</td>
+            <td>{{ persona.telefono }}</td>
+            <td>{{ persona.correo }}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+</div>

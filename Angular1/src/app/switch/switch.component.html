@@ -1,0 +1,54 @@
+<p>switch</p>
+
+<!-- <div [ngSwitch]="dia">
+    <span *ngSwitchCase="1">Lunes</span>
+    <span *ngSwitchCase="2">Martes</span>
+    <span *ngSwitchCase="3">Miercoles</span>
+    <span *ngSwitchCase="4">Jueves</span>
+    <span *ngSwitchCase="5">Viernes</span>
+    <span *ngSwitchCase="6">Sabado</span>
+    <span *ngSwitchCase="7">Domingo</span>
+    <span *ngSwitchDefault>Valor no definido</span>
+</div> -->
+
+<input type="text" class="form-control" #nuevoDia> <!-- variable de plantilla #nuevo dia -->
+<button class="btn btn-primary mt-2" (click)="dia=nuevoDia.value">
+    Mostrar día
+</button>
+<br>
+
+<div [ngSwitch]="dia" *ngIf="dia" class="text-center alert alert-danger">
+    <div *ngSwitchCase="'1'">Lunes</div>
+    <div *ngSwitchCase="'2'">Martes</div>
+    <div *ngSwitchCase="'3'">Miercoles</div>
+    <div *ngSwitchCase="'4'">Jueves</div>
+    <div *ngSwitchCase="'5'">Viernes</div>
+    <div *ngSwitchCase="'6'">Sabado</div>
+    <div *ngSwitchCase="'7'">Domingo</div>
+
+    
+   
+    <div *ngSwitchDefault >Valor no definido</div>
+    
+</div>
+
+
+
+<!-- <div>
+
+    <input type="text" placeholder="Escriba su nombre" class="form-control" #nombre>
+
+    <button class="btn btn-success mt-2" (click)="mostrar_en_consola(nombre.value)">Mostrar en consola</button>
+
+    <div class="alert alert-primary mt-4" *ngIf="abrirAlerta; else mensaje">
+        <p>se ha enviado el mensaje</p>
+        <button class="btn btn-danger" (click)="abrirAlerta=false"> x </button>
+    </div>
+
+    <ng-template #mensaje>
+        <div class="alert alert-danger mt-4">
+            Mensaje de prueba
+        </div>
+    </ng-template>
+
+</div> -->

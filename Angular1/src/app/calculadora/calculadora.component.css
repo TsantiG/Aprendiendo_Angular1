@@ -1,0 +1,25 @@
+.calculadora-container {
+    display: flex;
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+    padding: 20px; /* Espacio alrededor del contenido */
+    border-radius: 10px; /* Bordes redondeados */
+
+  }
+
+.card-body{
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+
+}  
+
+.form-control{
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+}
+
+.form-select{
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+
+}

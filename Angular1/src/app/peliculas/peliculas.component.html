@@ -1,0 +1,109 @@
+<div class="container">
+  <h2>Formulario de Película</h2>
+  <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="movieId" class="form-label">ID de la Película</label>
+      <input type="number" class="form-control" id="movieId" formControlName="movieId">
+    </div>
+    <div class="mb-3">
+      <label for="movieName" class="form-label">Nombre de la Película</label>
+      <input type="text" class="form-control" id="movieName" formControlName="movieName">
+    </div>
+    <div class="mb-3">
+      <label for="movieDetails" class="form-label">Detalles de la Película</label>
+      <textarea class="form-control" id="movieDetails" formControlName="movieDetails"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="movieGenre" class="form-label">Género de la Película</label>
+      <input type="text" class="form-control" id="movieGenre" formControlName="movieGenre">
+    </div>
+    <div class="mb-3">
+      <label for="movieImage" class="form-label">Imagen de la Película</label>
+      <input type="file" class="form-control" id="movieImage" (change)="onFileSelected($event)">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="movieForm.invalid">Enviar</button>
+  </form>
+
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th colspan="2">Películas ID Impar</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div *ngIf="movieData[1]">
+            <h3>{{ movieData[1].movieName }}</h3>
+            <p><strong>Detalles:</strong> {{ movieData[1].movieDetails }}</p>
+            <p><strong>Género:</strong> {{ movieData[1].movieGenre }}</p>
+            <img *ngIf="movieData[1].movieImage" [src]="movieData[1].movieImage" alt="Imagen de la película" class="movie-image">
+          </div>
+          <div *ngIf="!movieData[1]">
+            No se han agregado datos
+          </div>
+        </td>
+        <td>
+          <div *ngIf="movieData[2]">
+            <h3>{{ movieData[2].movieName }}</h3>
+            <p><strong>Detalles:</strong> {{ movieData[2].movieDetails }}</p>
+            <p><strong>Género:</strong> {{ movieData[2].movieGenre }}</p>
+            <img *ngIf="movieData[2].movieImage" [src]="movieData[2].movieImage" alt="Imagen de la película" class="movie-image">
+          </div>
+          <div *ngIf="!movieData[2]">
+            No se han agregado datos
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div *ngIf="movieData[3]">
+            <h3>{{ movieData[3].movieName }}</h3>
+            <p><strong>Detalles:</strong> {{ movieData[3].movieDetails }}</p>
+            <p><strong>Género:</strong> {{ movieData[3].movieGenre }}</p>
+            <img *ngIf="movieData[3].movieImage" [src]="movieData[3].movieImage" alt="Imagen de la película" class="movie-image">
+          </div>
+          <div *ngIf="!movieData[3]">
+            No se han agregado datos
+          </div>
+        </td>
+        <td>
+          <div *ngIf="movieData[4]">
+            <h3>{{ movieData[4].movieName }}</h3>
+            <p><strong>Detalles:</strong> {{ movieData[4].movieDetails }}</p>
+            <p><strong>Género:</strong> {{ movieData[4].movieGenre }}</p>
+            <img *ngIf="movieData[4].movieImage" [src]="movieData[4].movieImage" alt="Imagen de la película" class="movie-image">
+          </div>
+          <div *ngIf="!movieData[4]">
+            No se han agregado datos
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div *ngIf="movieData[5]">
+            <h3>{{ movieData[5].movieName }}</h3>
+            <p><strong>Detalles:</strong> {{ movieData[5].movieDetails }}</p>
+            <p><strong>Género:</strong> {{ movieData[5].movieGenre }}</p>
+            <img *ngIf="movieData[5].movieImage" [src]="movieData[5].movieImage" alt="Imagen de la película" class="movie-image">
+          </div>
+          <div *ngIf="!movieData[5]">
+            No se han agregado datos
+          </div>
+        </td>
+        <td>
+          <div *ngIf="movieData[6]">
+            <h3>{{ movieData[6].movieName }}</h3>
+            <p><strong>Detalles:</strong> {{ movieData[6].movieDetails }}</p>
+            <p><strong>Género:</strong> {{ movieData[6].movieGenre }}</p>
+            <img *ngIf="movieData[6].movieImage" [src]="movieData[6].movieImage" alt="Imagen de la película" class="movie-image">
+          </div>
+          <div *ngIf="!movieData[6]">
+            No se han agregado datos
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

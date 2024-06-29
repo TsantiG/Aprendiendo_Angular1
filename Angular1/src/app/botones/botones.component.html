@@ -1,0 +1,35 @@
+<hr>
+<div>
+
+    <button [class]="{
+        'disabled':button_disabled,
+        'btn':true,
+        'btn-success':true,
+              
+
+     }"
+     (click)="text_color = 
+    'text-warning'">Color Amarillo</button>
+    
+    <button [class]="{
+        'disabled':button_disabled,
+        'btn':true,
+        'btn-warning':true
+    }"
+    (click)="text_color =
+     'text-btn-warning'">Color Azul</button>
+    
+    <button
+     [class]="{
+        'disabled':button_disabled,
+        'btn':true,
+        'btn-danger':true
+    }"(click)="text_color = 
+    'text-success'">Color verde</button>
+</div>
+
+
+<h1 [class]="text_color">Texto que cambia de color</h1>
+
+<button class="btn btn-secondary" (click)="button_disabled = 
+!button_disabled">Habilitar/Deshabilitar</button>

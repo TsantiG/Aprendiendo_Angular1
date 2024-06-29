@@ -1,0 +1,47 @@
+<div class="calculadora-container">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="mb-2">
+                    <label class="form-label">
+                        Primer número
+                    </label>
+                    <input type="number" class="form-control" id="primerNumero" name="primerNumero" placeholder="Ingrese el primer número"
+                        [(ngModel)]="primerNumero" required #primerNumeroInput="ngModel" value="">
+                    <div class="alert alert-danger mt-2" [hidden]="primerNumeroInput.valid || primerNumeroInput.pristine">
+                        El primer número es obligatorio
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">
+                        Segundo número
+                    </label>
+                    <input type="number" class="form-control" name="segundoNumero" placeholder="Ingrese el segundo número"
+                        [(ngModel)]="segundoNumero" required #segundoNumeroInput="ngModel">
+                    <div class="alert alert-danger mt-2" [hidden]="segundoNumeroInput.valid || segundoNumeroInput.pristine">
+                        El segundo número es obligatorio
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label">
+                        Operación
+                    </label>
+                    <select class="form-select" name="operacion" [(ngModel)]="operacion" required #operacionSelect="ngModel">
+                        <option value="suma">Suma</option>
+                        <option value="resta">Resta</option>
+                        <option value="multiplicacion">Multiplicación</option>
+                        <option value="division">División</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-outline-light mb-2" (click)="calcular()"
+                    [disabled]="primerNumeroInput.invalid || segundoNumeroInput.invalid || operacionSelect.invalid">Calcular</button>
+                    <input type="number" class="form-control" name="resultado" placeholder=""
+                    [(ngModel)]="resultado" required #resultadoInput="ngModel">
+                
+            </form>
+        </div>
+   
+</div>
+    

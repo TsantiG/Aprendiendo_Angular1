@@ -1,0 +1,11 @@
+.tabla-personas {
+    background-color: black;
+    color: white;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .tabla-personas th, .tabla-personas td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+  }

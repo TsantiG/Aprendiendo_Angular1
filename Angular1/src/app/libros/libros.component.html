@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="libro" *ngFor="let libro of libros">
+      <div class="libro-info">
+        <p>ID: {{ libro.id }}</p>
+        <p>Nombre: {{ libro.nombre }}</p>
+        <p>Autor: {{ libro.autor }}</p>
+        <p>Descripción: {{ libro.descripcion }}</p>
+      </div>
+      <img src="{{ libro.imagen }}" alt="{{ libro.nombre }}" class="libro-imagen" />
+    </div>
+  </div>
+  
